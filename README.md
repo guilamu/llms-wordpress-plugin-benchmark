@@ -1,5 +1,3 @@
-**Title:** Show HN: I benchmarked 14 LLMs on a WP plugin task after Copilot removed Claude Opus. Exactly zero used the native UI.
-
 **The Context**
 Recently, GitHub Copilot silently dropped support for Claude Opus on Pro accounts. Since Opus was my go-to model for my specific daily workflow—developing WordPress and Gravity Forms plugins—I was left looking for a reliable replacement. I decided to run a rigorous, blind benchmark across 14 state-of-the-art and local LLMs to objectively measure which model understands WordPress development best. To ensure a perfectly fair test, I always started with a completely fresh IDE and zero context for every single generation.
 
@@ -150,4 +148,4 @@ Delivering solid architecture (Singleton pattern, clean i18n, structured PHP) at
 ### Conclusion
 When given a basic prompt, even the best LLMs default to the path of least resistance: "just make it work." Rather than attempting to analyze the implicit context (the existing DOM structure), they forcefully inject new elements. If you want native-feeling, fully integrated UX, you cannot rely on the model's implicit knowledge; you have to explicitly prompt for it. 
 
-*(I will be testing Level 2 and Level 3 prompts next, feeding the models the actual HTML DOM structure to see if they adapt).*
+I will be testing Level 2 prompt next, feeding the models a Wordpress+Gravity Forms reference file to see how they adapt.
