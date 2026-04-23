@@ -1,0 +1,32 @@
+.gf-live-search {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0 16px;
+}
+
+.gf-live-search__input {
+	min-width: 320px;
+	max-width: 100%;
+}
+
+.gf-live-search__status {
+	margin: 0;
+	color: #50575e;
+}
+
+.gf-live-search-hidden {
+	display: none;
+}
+
+@media (max-width: 782px) {
+	.gf-live-search {
+		align-items: stretch;
+	}
+
+	.gf-live-search__input {
+		width: 100%;
+		min-width: 0;
+	}
+}

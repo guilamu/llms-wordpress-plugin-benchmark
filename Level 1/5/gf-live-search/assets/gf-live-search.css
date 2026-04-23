@@ -1,0 +1,33 @@
+/**
+ * GF Live Search – styles.
+ *
+ * @package GF_Live_Search
+ */
+
+#gf-live-search-wrap {
+	margin-bottom: 12px;
+}
+
+.gf-live-search-input {
+	width: 100%;
+	max-width: 400px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background: #fff;
+	color: #2c3338;
+	transition: border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.gf-live-search-input:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.gf-live-search-input::placeholder {
+	color: #787c82;
+	opacity: 1;
+}

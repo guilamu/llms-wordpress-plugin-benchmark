@@ -1,0 +1,38 @@
+# Copyright (C) 2026 GF Live Search
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: GF Live Search 1.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/gf-live-search\n"
+"POT-Creation-Date: 2026-04-23 16:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#. Plugin Name of the plugin
+msgid "GF Live Search"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds a real-time search field to the Gravity Forms form list page for instant filtering without page reload."
+msgstr ""
+
+#: gf-live-search.php
+msgctxt "search input placeholder"
+msgid "Search forms…"
+msgstr ""
+
+#: gf-live-search.php
+msgctxt "no results message"
+msgid "No forms match your search."
+msgstr ""
+
+#: gf-live-search.php
+msgctxt "clear button label"
+msgid "Clear search"
+msgstr ""

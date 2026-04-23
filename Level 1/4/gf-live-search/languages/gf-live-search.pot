@@ -1,0 +1,33 @@
+# Copyright (C) 2026 OpenCode
+# This file is distributed under the same license as the GF Live Search plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: GF Live Search 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gf-live-search\n"
+"POT-Creation-Date: 2026-04-23 16:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <email@example.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#. Plugin Name of the plugin
+msgid "GF Live Search"
+msgstr ""
+
+#. Description of the plugin
+msgid "Ajoute une recherche en temps réel sur la page de liste des formulaires Gravity Forms."
+msgstr ""
+
+#. Author of the plugin
+msgid "OpenCode"
+msgstr ""
+
+#: gf-live-search.php:72
+msgid "Rechercher un formulaire..."
+msgstr ""
+
+#: gf-live-search.php:73
+msgid "Aucun résultat trouvé."
+msgstr ""

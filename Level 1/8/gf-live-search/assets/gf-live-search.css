@@ -1,0 +1,52 @@
+/* ==========================================================================
+   GF Live Search — admin stylesheet
+   Loaded only on /wp-admin/?page=gf_edit_forms (forms list).
+   ========================================================================== */
+
+/* ── Wrapper ────────────────────────────────────────────────────────────── */
+#gf-live-search-wrap {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 12px;
+}
+
+/* ── Search input ───────────────────────────────────────────────────────── */
+#gf-live-search-input {
+	display: block;
+	width: 280px;
+	max-width: 100%;
+	padding: 5px 10px;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #2c3338;
+	background-color: #fff;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 2px rgba( 0, 0, 0, .07 );
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#gf-live-search-input:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1, inset 0 1px 2px rgba( 0, 0, 0, .07 );
+	outline: none;
+}
+
+/* High-contrast / forced-colors mode */
+@media ( forced-colors: active ) {
+	#gf-live-search-input:focus {
+		outline: 2px solid ButtonText;
+	}
+}
+
+/* ── "No results" notice ────────────────────────────────────────────────── */
+#gf-live-search-no-results {
+	margin: 8px 0 0;
+	padding: 8px 12px;
+	font-size: 13px;
+	color: #50575e;
+	background: #f6f7f7;
+	border-left: 4px solid #72aee6;
+	border-radius: 0 3px 3px 0;
+}

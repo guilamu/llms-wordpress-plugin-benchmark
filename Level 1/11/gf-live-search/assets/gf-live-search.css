@@ -1,0 +1,26 @@
+.gf-live-search {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+	flex-wrap: wrap;
+}
+
+.gf-live-search__input {
+	width: 100%;
+	max-width: 320px;
+	padding: 6px 10px;
+	line-height: 1.4;
+}
+
+.gf-live-search__count {
+	color: #50575e;
+	font-size: 13px;
+}
+
+.gf-live-search__no-results td {
+	padding: 16px;
+	text-align: center;
+	color: #50575e;
+	font-style: italic;
+}

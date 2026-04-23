@@ -1,0 +1,57 @@
+{
+  "model": "Model 9",
+  "total": 49,
+  "scores": {
+    "activation": {
+      "pts": 15,
+      "max": 15,
+      "note": "Le code est valide, définit ABSPATH, s'appuie sur un singleton et s'active sans erreur."
+    },
+    "filtrage_dom": {
+      "pts": 8,
+      "max": 20,
+      "note": "Filtrage fonctionnel, mais il n'utilise pas l'input natif de GF (il crée le sien) et ne dispose ni d'un debounce ni d'un cache."
+    },
+    "condition_chargement": {
+      "pts": 6,
+      "max": 10,
+      "note": "La page cible (gf_edit_forms) est bien vérifiée, mais il manque la condition pour exclure l'édition d'un formulaire spécifique (vérification de $_GET['id'])."
+    },
+    "no_results_row": {
+      "pts": 10,
+      "max": 10,
+      "note": "Un message indiquant l'absence de résultats est injecté (sous forme de paragraphe au lieu d'une ligne de tableau) et s'affiche/disparaît correctement."
+    },
+    "raccourcis_clavier": {
+      "pts": 0,
+      "max": 10,
+      "note": "Aucun raccourci clavier n'est implémenté."
+    },
+    "compteur": {
+      "pts": 0,
+      "max": 10,
+      "note": "Aucune mise à jour du compteur natif des résultats."
+    },
+    "preload_pagination": {
+      "pts": 0,
+      "max": 10,
+      "note": "Le script ne précharge pas les autres pages pour gérer la recherche globale sur une liste paginée."
+    },
+    "diacritiques": {
+      "pts": 2,
+      "max": 5,
+      "note": "La comparaison est insensible à la casse mais ne gère pas les diacritiques/accents."
+    },
+    "i18n": {
+      "pts": 5,
+      "max": 5,
+      "note": "Les chaînes sont traduites côté PHP et correctement injectées côté JS via wp_localize_script."
+    },
+    "qualite_php": {
+      "pts": 3,
+      "max": 5,
+      "note": "Présence de la classe singleton, du guard ABSPATH et du bon hook admin_enqueue_scripts. Il manque l'usage de constantes pour DIR/URL."
+    }
+  },
+  "verdict": "Le point fort est un code PHP structuré et une bonne gestion des traductions vers le JS, mais le point faible est un filtrage basique sans debounce qui ignore l'interface existante de Gravity Forms (crée son propre champ de recherche au lieu de se greffer au natif)."
+}

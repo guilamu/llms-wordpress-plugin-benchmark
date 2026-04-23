@@ -1,0 +1,35 @@
+/* Positionnement du conteneur de recherche */
+.gf-live-search-container {
+    margin: 10px 20px 20px 0;
+    float: right; /* Aligné à droite pour ne pas gêner le titre */
+    z-index: 99;
+}
+
+/* Style de l'input pour ressembler au style WordPress Admin */
+#gf-live-search-input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #a7aaad;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    width: 250px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#gf-live-search-input:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+/* Responsive simple */
+@media screen and (max-width: 782px) {
+    .gf-live-search-container {
+        float: none;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    #gf-live-search-input {
+        width: 100%;
+    }
+}

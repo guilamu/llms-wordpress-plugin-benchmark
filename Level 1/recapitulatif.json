@@ -1,0 +1,800 @@
+[
+  {
+    "model": "gemini 3 flash",
+    "total": 47,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Le fichier est syntaxiquement valide, possède un guard ABSPATH et la classe est bien instanciée sans erreur fatale."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Le filtrage est fonctionnel mais il n'y a ni debounce ni mise en cache du texte de recherche des lignes."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Les assets sont conditionnés sur le hook 'forms_page_gf_edit_forms' mais l'absence de $_GET['id'] n'est pas vérifiée."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Une ligne de type 'aucun résultat' est bien injectée, affichée dynamiquement au besoin et traduite."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier n'est implémenté pour cibler l'input de recherche."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif (.displaying-num) de Gravity Forms n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Il n'y a pas de préchargement (fetch) des formulaires sur les autres pages en arrière-plan."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "La comparaison est insensible à la casse via toLowerCase() mais ne gère pas les diacritiques."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Les chaînes sont traduites côté PHP avec __() et passées proprement au JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 1,
+        "max": 5,
+        "note": "Utilise ABSPATH et le bon hook, mais manque le pattern Singleton et la définition de constantes du plugin."
+      }
+    },
+    "verdict": "Le modèle propose une base fonctionnelle et bien localisée, mais l'expérience utilisateur et les performances sont limitées par l'absence de debounce, de gestion de la pagination et d'intégration native."
+  },
+  {
+    "model": "gemini 3.1 pro",
+    "total": 53,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation réussie, guard ABSPATH présent et classe correctement instanciée."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel mais omet le debounce, le cache de texte, et ajoute un nouvel input au lieu d'intercepter le champ natif."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Double condition parfaitement respectée (page gf_edit_forms et absence d'id spécifique)."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Ligne 'aucun résultat' injectée, traduite et masquée correctement lorsque le champ est vidé."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier n'est implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Absence de mise à jour du compteur natif des résultats."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun mécanisme fetch pour récupérer et filtrer les formulaires des autres pages."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Filtrage insensible à la casse via toLowerCase(), mais ne gère pas les diacritiques (accents)."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Chaînes traduites en PHP et passées correctement au JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Code propre (classe, ABSPATH, bons hooks) mais omet le pattern singleton et la définition de constantes globales."
+      }
+    },
+    "verdict": "Un plugin robuste sur les fondamentaux (sécurité, ciblage, i18n, filtrage de base) mais qui fait l'impasse sur l'optimisation des performances (debounce) et l'expérience utilisateur avancée (raccourcis, pagination continue)."
+  },
+  {
+    "model": "glm 5.1",
+    "total": 61,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation réussie, fichier syntaxiquement valide avec ABSPATH, constantes définies et singleton."
+      },
+      "filtrage_dom": {
+        "pts": 14,
+        "max": 20,
+        "note": "Filtrage DOM fonctionnel et debounce de 200ms présents, mais aucun cache du texte au niveau des lignes."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Vérification stricte de la page courante (gf_edit_forms) et vérification de l'absence du paramètre d'édition de formulaire (id)."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Ligne 'Aucun résultat' générée, injectée dans le DOM et conditionnée correctement à l'affichage."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Absence totale de raccourcis clavier pour focus l'input."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur de pagination natif (.displaying-num) n'est pas mis à jour selon les éléments filtrés."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun préchargement via fetch des autres pages n'est implémenté."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Le filtrage est insensible à la casse (toLowerCase) mais ne gère pas les diacritiques."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Chaines traduisibles en PHP avec load_plugin_textdomain et passées au JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 5,
+        "max": 5,
+        "note": "Code PHP très propre, utilise une classe Singleton, les bonnes constantes, l'ABSPATH et s'accroche via admin_enqueue_scripts."
+      }
+    },
+    "verdict": "Un code d'excellente qualité technique sur ses fondations (PHP, sécurité, localisation), mais dont l'expérience utilisateur et les performances sur de grands volumes sont perfectibles en raison de l'absence des fonctionnalités avancées du JS (pagination, diacritiques, raccourcis, cache)."
+  },
+  {
+    "model": "kimi K2.6",
+    "total": 49,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Plugin syntaxiquement valide, ABSPATH présent, instanciation correcte de la classe."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel présent mais création d'un champ de recherche custom sans cibler l'input natif, et absence de debounce/cache."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Condition présente pour limiter à gf_edit_forms, mais absence de vérification de l'id formulaire pour exclure la page d'édition."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Message 'aucun résultat' géré correctement (apparaît, disparaît et est traduit), même si inséré sous forme de div plutôt que tr."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur de résultats natif n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun mécanisme de préchargement de la pagination."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Insensible à la casse via toLowerCase() mais ne gère pas les diacritiques/accents."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Internationalisation complète en PHP et transmise proprement au JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Code objet correct utilisant admin_enqueue_scripts et ABSPATH, mais la classe n'est pas un singleton et toutes les constantes (DIR/URL) ne sont pas définies."
+      }
+    },
+    "verdict": "Une base propre, sécurisée et bien internationalisée, mais qui manque de raffinement UX (debounce, préchargement, raccourcis clavier)."
+  },
+  {
+    "model": "mimo v2.5 pro",
+    "total": 58,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation sans erreur fatale, guard ABSPATH présent et instanciation via un pattern Singleton valide."
+      },
+      "filtrage_dom": {
+        "pts": 14,
+        "max": 20,
+        "note": "Filtrage fonctionnel avec debounce, mais sans mécanisme de cache du texte des lignes. À noter : le plugin injecte son propre champ de recherche au lieu d'utiliser l'input natif de GF."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Chargement restreint au hook de la page gf_edit_forms, mais il n'y a pas de garde concernant l'éditeur de formulaire spécifique (absence d'ID)."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Ligne 'aucun résultat' bien injectée, affichée et masquée correctement selon l'état de la recherche (avec un texte statique autorisé)."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté pour cibler l'input."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif de résultats n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le mécanisme de préchargement et de parsing de la pagination en arrière-plan est totalement absent."
+      },
+      "diacritiques": {
+        "pts": 5,
+        "max": 5,
+        "note": "Fonction de normalisation présente, qui gère correctement la casse et les diacritiques via NFD."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Internationalisation gérée en PHP avec textdomain et utilisation correcte de wp_localize_script pour exposer des données traduites au JS."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "3 des 4 critères remplis : classe Singleton, guard ABSPATH et utilisation du hook admin_enqueue_scripts. Les constantes de plugin (DIR/URL/VERSION) sont manquantes."
+      }
+    },
+    "verdict": "Ce modèle propose un filtrage DOM propre et performant (avec gestion des accents) ainsi qu'un PHP de base très correct, mais échoue à implémenter les fonctionnalités avancées (pagination, compteur et raccourcis)."
+  },
+  {
+    "model": "minimax m2.7",
+    "total": 36,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Le fichier principal est valide, définit les constantes et l'ABSPATH guard."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage JS implémenté en masquant/affichant les lignes du DOM mais sans debounce ni cache. Du code AJAX non utilisé est présent côté PHP."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Vérifie bien la page toplevel_page_gf_edit_forms mais omet la vérification de l'absence d'ID de formulaire."
+      },
+      "no_results_row": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune gestion d'une ligne 'Aucun résultat' côté JS."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun préchargement des pages paginées via fetch."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Comparaison insensible à la casse grâce à toLowerCase() mais ne gère pas les diacritiques."
+      },
+      "i18n": {
+        "pts": 2,
+        "max": 5,
+        "note": "Traductions présentes côté PHP mais aucun mécanisme pour passer des traductions au JavaScript."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Code procédural (pas de classe singleton) mais respecte 3 critères : ABSPATH, constantes et le hook admin_enqueue_scripts."
+      }
+    },
+    "verdict": "Une implémentation basique dont le point fort est un filtrage DOM client fonctionnel, mais pénalisée par l'absence d'UX (pas de raccourcis ni de mise à jour de compteurs) et par la présence de code AJAX inutile."
+  },
+  {
+    "model": "qwen 3.6+",
+    "total": 55,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Code syntaxiquement valide, ABSPATH présent, constantes définies, le plugin s'active sans erreur fatale."
+      },
+      "filtrage_dom": {
+        "pts": 14,
+        "max": 20,
+        "note": "Filtrage fonctionnel avec un debounce de 150ms, mais sans mise en cache du texte de recherche pour chaque ligne."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Vérifie bien que la page est gf_edit_forms, mais omet la vérification de l'absence d'ID de formulaire."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Comportement complet : le message de résultats vides est bien injecté, disparaît lorsque nécessaire, et utilise une chaîne traduite."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif de résultats n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun préchargement des pages paginées n'est implémenté."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Recherche insensible à la casse uniquement, sans gestion des diacritiques."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Excellente internationalisation avec __() côté PHP et wp_localize_script pour le JS."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Code procédural (pas de singleton), mais contient 3 des 4 éléments requis (ABSPATH, constantes, hook admin_enqueue_scripts)."
+      }
+    },
+    "verdict": "Une implémentation de base propre et fonctionnelle avec une bonne internationalisation, mais pénalisée par l'absence des fonctionnalités avancées (raccourcis, pagination, mise à jour du compteur)."
+  },
+  {
+    "model": "sonnet 4.6",
+    "total": 55,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation sans erreur, la constante ABSPATH est présente, constantes du plugin définies et la classe singleton est instanciée correctement."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Le filtrage sur le DOM est fonctionnel, mais il manque le debounce et le cache par ligne."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Double condition de chargement validée : vérifie que la page est 'gf_edit_forms' et s'assure de l'absence de paramètres 'id' et 'view'."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Message 'aucun résultat' bien injecté dans le DOM, affiché si besoin, et masqué lorsque le champ est vidé."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur de résultats natif de Gravity Forms n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun mécanisme fetch pour le chargement des autres pages de la pagination n'est présent."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Comparaison insensible à la casse présente (toLowerCase()), mais les diacritiques (accents) ne sont pas gérés."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "L'internationalisation est complète côté PHP et transmise proprement au JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 5,
+        "max": 5,
+        "note": "Excellent code PHP : utilisation d'un singleton, de constantes, de hooks adéquats (admin_enqueue_scripts)."
+      }
+    },
+    "verdict": "Une architecture robuste et un code PHP très propre (point fort), mais l'expérience JS manque d'optimisations (debounce) et de la majorité des fonctionnalités avancées attendues comme la pagination ou les raccourcis (point faible)."
+  },
+  {
+    "model": "gpt 5.4 xhigh",
+    "total": 49,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Le code est valide, définit ABSPATH, s'appuie sur un singleton et s'active sans erreur."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel, mais il n'utilise pas l'input natif de GF (il crée le sien) et ne dispose ni d'un debounce ni d'un cache."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "La page cible (gf_edit_forms) est bien vérifiée, mais il manque la condition pour exclure l'édition d'un formulaire spécifique (vérification de $_GET['id'])."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Un message indiquant l'absence de résultats est injecté (sous forme de paragraphe au lieu d'une ligne de tableau) et s'affiche/disparaît correctement."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier n'est implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune mise à jour du compteur natif des résultats."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le script ne précharge pas les autres pages pour gérer la recherche globale sur une liste paginée."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "La comparaison est insensible à la casse mais ne gère pas les diacritiques/accents."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Les chaînes sont traduites côté PHP et correctement injectées côté JS via wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Présence de la classe singleton, du guard ABSPATH et du bon hook admin_enqueue_scripts. Il manque l'usage de constantes pour DIR/URL."
+      }
+    },
+    "verdict": "Le point fort est un code PHP structuré et une bonne gestion des traductions vers le JS, mais le point faible est un filtrage basique sans debounce qui ignore l'interface existante de Gravity Forms (crée son propre champ de recherche au lieu de se greffer au natif)."
+  },
+  {
+    "model": "claude 4.7 Opus",
+    "total": 46,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Code PHP valide et sans erreur fatale, s'active correctement."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel en temps réel mais sans debounce ni cache. À noter : le script crée son propre champ au lieu d'intercepter l'input natif de Gravity Forms."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Double vérification parfaite (page gf_edit_forms et absence de paramètre id/view)."
+      },
+      "no_results_row": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune ligne <tr> injectée dans le DOM ; le script utilise un simple span de statut externe au tableau."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente (le script écoute uniquement la touche Echap sur son propre input)."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif .displaying-num n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente, aucun préchargement via fetch des pages suivantes."
+      },
+      "diacritiques": {
+        "pts": 5,
+        "max": 5,
+        "note": "Insensibilité à la casse et aux diacritiques parfaitement gérée (toLowerCase et normalize NFD)."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Chaînes traduites en PHP et passées au JS correctement avec wp_localize_script."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "3/4 critères respectés : constantes, ABSPATH, et admin_enqueue_scripts présents, mais approche procédurale sans classe singleton."
+      }
+    },
+    "verdict": "Le point fort est un code de base propre et robuste (sécurité PHP, i18n, gestion des diacritiques parfaite), mais le point faible principal est l'absence de la majorité des fonctionnalités UX avancées et le non-respect de l'intégration UI native (création d'un champ doublon)."
+  },
+  {
+    "model": "claude 4.7 Opus plan",
+    "total": 68,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation réussie, pas d'erreur fatale et constante ABSPATH présente."
+      },
+      "filtrage_dom": {
+        "pts": 20,
+        "max": 20,
+        "note": "Filtrage fonctionnel avec debounce (120ms) et mise en cache du texte de recherche, bien qu'il ajoute un nouvel input au lieu d'utiliser le champ de recherche natif GF."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Conditions strictes bien respectées (vérifie la page gf_edit_forms et l'absence d'id du formulaire)."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "Ligne 'aucun résultat' créée dynamiquement, affichée et masquée correctement selon les résultats."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier n'a été implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Ne met pas à jour le compteur natif GF (.displaying-num), mais crée son propre élément de compteur séparé."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune gestion de la pagination ou de préchargement en arrière-plan via fetch."
+      },
+      "diacritiques": {
+        "pts": 5,
+        "max": 5,
+        "note": "Comparaison robuste et insensible à la casse et aux diacritiques (utilisation de .normalize('NFD') et regex)."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Excellente internationalisation avec wp_set_script_translations en PHP et wp.i18n en JS."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Code procédural (pas de classe singleton), mais présence de ABSPATH, des constantes et du bon hook d'enqueue."
+      }
+    },
+    "verdict": "Une implémentation très propre et robuste sur les fonctionnalités de base (filtrage performant, excellente i18n et conditions de chargement strictes), mais qui omet totalement l'intégration à l'UI native (compteur) et les fonctionnalités avancées (raccourcis, pagination)."
+  },
+  {
+    "model": "claude 4.6 Opus plan",
+    "total": 59,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Le fichier principal est valide, définit ABSPATH et la classe est bien instanciée sans erreur."
+      },
+      "filtrage_dom": {
+        "pts": 14,
+        "max": 20,
+        "note": "Filtrage fonctionnel avec debounce, mais pas de mise en cache du texte de recherche. Il crée un nouvel input au lieu d'intercepter le natif."
+      },
+      "condition_chargement": {
+        "pts": 10,
+        "max": 10,
+        "note": "Les conditions sur gf_edit_forms et l'absence d'ID sont bien respectées."
+      },
+      "no_results_row": {
+        "pts": 10,
+        "max": 10,
+        "note": "La ligne est bien créée, insérée et sa visibilité est gérée correctement."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier n'a été implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur natif n'est pas mis à jour."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune gestion de la pagination ou de chargement en arrière-plan."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Comparaison insensible à la casse mais les diacritiques ne sont pas traités."
+      },
+      "i18n": {
+        "pts": 5,
+        "max": 5,
+        "note": "Traduction PHP correcte et passage au JS via wp_localize_script effectué."
+      },
+      "qualite_php": {
+        "pts": 3,
+        "max": 5,
+        "note": "Singleton, ABSPATH et admin_enqueue_scripts sont présents, mais il manque les constantes de chemin (DIR/URL)."
+      }
+    },
+    "verdict": "Le point fort est une base solide et fonctionnelle pour le filtrage simple, mais le point faible principal est l'absence totale de prise en charge des fonctionnalités avancées (pagination, compteur, raccourcis)."
+  },
+  {
+    "model": "gemma4-e4b (local inference on lm studio rx6700 10gb)",
+    "total": 32,
+    "scores": {
+      "activation": {
+        "pts": 15,
+        "max": 15,
+        "note": "Activation valide, constante ABSPATH vérifiée et classe correctement instanciée."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel (masquage/affichage des lignes), mais aucun debounce n'est présent et il n'y a pas de cache du texte de la ligne."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Chargement conditionné sur le hook 'gf_edit_forms', mais l'absence d'id de formulaire spécifique ($_GET['id']) n'est pas vérifiée."
+      },
+      "no_results_row": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune ligne de type 'aucun résultat' n'est injectée."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucun raccourci clavier implémenté."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Le compteur de résultats natif n'est pas mis à jour par le script."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Aucune gestion du préchargement des pages de pagination via fetch."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Comparaison insensible à la casse via toLowerCase(), mais ne gère pas les diacritiques."
+      },
+      "i18n": {
+        "pts": 0,
+        "max": 5,
+        "note": "Toutes les chaînes visibles (dans le JavaScript) sont écrites en dur, aucune fonction de traduction n'est exploitée pour l'affichage utilisateur."
+      },
+      "qualite_php": {
+        "pts": 1,
+        "max": 5,
+        "note": "Seulement 2 des 4 éléments attendus sont présents (ABSPATH et le bon hook). Il manque le pattern singleton et les constantes de configuration."
+      }
+    },
+    "verdict": "Le point fort est un filtrage basique fonctionnel qui permet l'activation sans erreur, mais le point faible est l'absence totale des fonctionnalités d'expérience utilisateur avancées (raccourcis, pagination, message de liste vide)."
+  },
+  {
+    "model": "gemma4-26b (local inference on 7700x CPU 64gb ram)",
+    "total": 18,
+    "scores": {
+      "activation": {
+        "pts": 0,
+        "max": 15,
+        "note": "Erreur fatale empêchant l'activation : appel à une méthode non définie otin() alors qu'elle est déclarée en tant que __otin()."
+      },
+      "filtrage_dom": {
+        "pts": 8,
+        "max": 20,
+        "note": "Filtrage fonctionnel mais sans debounce et n'utilisant pas l'input natif de Gravity Forms (injection d'un nouvel input)."
+      },
+      "condition_chargement": {
+        "pts": 6,
+        "max": 10,
+        "note": "Vérifie bien la page gf_edit_forms, mais omet de vérifier l'absence d'ID d'un formulaire spécifique."
+      },
+      "no_results_row": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente."
+      },
+      "raccourcis_clavier": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente."
+      },
+      "compteur": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente."
+      },
+      "preload_pagination": {
+        "pts": 0,
+        "max": 10,
+        "note": "Fonctionnalité absente."
+      },
+      "diacritiques": {
+        "pts": 2,
+        "max": 5,
+        "note": "Recherche insensible à la casse uniquement via toLowerCase(), sans gestion des accents/diacritiques."
+      },
+      "i18n": {
+        "pts": 2,
+        "max": 5,
+        "note": "Utilisation de __() en PHP, mais aucun mécanisme de passage des traductions au JavaScript."
+      },
+      "qualite_php": {
+        "pts": 0,
+        "max": 5,
+        "note": "Code invalide et inutilisable en l'état à cause de l'erreur fatale sur l'appel de méthode (otin)."
+      }
+    },
+    "verdict": "Malgré une bonne structure de départ avec séparation des assets, le modèle échoue complètement avec une erreur fatale absurde (méthode otin), couplée à une approche trop naïve du filtrage JavaScript ignorant presque tous les critères complexes."
+  }
+]

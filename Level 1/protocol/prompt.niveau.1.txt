@@ -1,0 +1,16 @@
+Crée un plugin WordPress nommé **GF Live Search** qui ajoute une recherche en temps réel à la page liste des formulaires Gravity Forms (`/wp-admin/?page=gf_edit_forms`).
+
+Le plugin doit :
+- Filtrer instantanément les lignes du tableau sans rechargement de page
+- Ne charger ses assets que sur la page concernée
+- Respecter les bonnes pratiques WordPress (hooks, sécurité, internationalisation)
+
+Structure attendue :
+
+gf-live-search/
+├── gf-live-search.php
+└── assets/
+    ├── gf-live-search.js
+    └── gf-live-search.css
+└── languages/
+    ├── gf-live-search.pot

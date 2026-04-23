@@ -1,0 +1,32 @@
+.gf-ls-wrap {
+    margin: 0 0 12px 0;
+}
+
+.gf-ls-search {
+    width: 100%;
+    max-width: 400px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.gf-ls-search:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.gf-ls-search::placeholder {
+    color: #757575;
+}
+
+.gf-ls-no-results td {
+    padding: 20px;
+    text-align: center;
+    color: #757575;
+    font-style: italic;
+}

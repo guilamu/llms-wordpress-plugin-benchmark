@@ -1,0 +1,24 @@
+.gf-live-search-wrap {
+    margin: 10px 0 20px;
+    max-width: 300px;
+}
+
+.gf-live-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-shadow: none;
+    transition: border-color 0.2s ease;
+}
+
+.gf-live-search-input:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.gf-live-search-input::placeholder {
+    color: #a0a5aa;
+}

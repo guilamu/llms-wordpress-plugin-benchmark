@@ -1,0 +1,95 @@
+/**
+ * GF Live Search — Styles
+ *
+ * @since 1.0.0
+ */
+
+/* ------------------------------------------------------------------ */
+/* Search wrapper                                                      */
+/* ------------------------------------------------------------------ */
+.gf-live-search-wrap {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 12px 0 16px;
+	max-width: 420px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Search input                                                        */
+/* ------------------------------------------------------------------ */
+.gf-live-search-input {
+	width: 100%;
+	padding: 8px 36px 8px 12px; /* right padding leaves room for clear btn */
+	font-size: 14px;
+	line-height: 1.5;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: 0 0 0 transparent;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gf-live-search-input:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: none;
+}
+
+.gf-live-search-input::placeholder {
+	color: #8c8f94;
+}
+
+/* ------------------------------------------------------------------ */
+/* Clear button (×)                                                    */
+/* ------------------------------------------------------------------ */
+.gf-live-search-clear {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: none; /* shown via JS when input has value */
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	font-size: 16px;
+	line-height: 1;
+	color: #8c8f94;
+	background: transparent;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.gf-live-search-clear:hover,
+.gf-live-search-clear:focus {
+	color: #1d2327;
+	background-color: #dcdcde;
+	outline: none;
+}
+
+/* Container needs relative positioning for the clear button */
+.gf-live-search-field {
+	position: relative;
+	flex: 1 1 auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Hidden rows                                                         */
+/* ------------------------------------------------------------------ */
+.gf-live-search-hidden {
+	display: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* "No results" row                                                    */
+/* ------------------------------------------------------------------ */
+.gf-live-search-no-results td {
+	padding: 16px 10px;
+	text-align: center;
+	color: #8c8f94;
+	font-style: italic;
+}

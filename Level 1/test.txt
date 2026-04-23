@@ -1,0 +1,14 @@
+1.json#gemini 3 flash
+2.json#gemini 3.1 pro
+3.json#glm 5.1
+4.json#kimi K2.6
+5.json#mimo v2.5 pro
+6.json#minimax m2.7
+7.json#qwen 3.6+
+8.json#sonnet 4.6
+9.json#gpt 5.4 xhigh
+10.json#claude 4.7 Opus fast
+11.json#claude 4.7 Opus plan
+12.json#claude 4.6 Opus plan
+13.json#gemma4-e4b (local inference on lm studio rx6700 10gb)
+14.json#gemma4-26b (local inference on 7700x CPU 64gb ram)

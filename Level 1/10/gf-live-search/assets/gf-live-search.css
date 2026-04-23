@@ -1,0 +1,49 @@
+/**
+ * GF Live Search styles.
+ */
+
+.gf-live-search {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+}
+
+.gf-live-search__input {
+	min-width: 280px;
+	max-width: 100%;
+	padding: 6px 10px;
+	font-size: 14px;
+	line-height: 1.5;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background-color: #fff;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.gf-live-search__input:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.gf-live-search__status {
+	color: #50575e;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.wp-list-table.gf-live-search--empty tbody tr:not(.no-items) {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.gf-live-search {
+		flex-wrap: wrap;
+	}
+
+	.gf-live-search__input {
+		min-width: 0;
+		width: 100%;
+	}
+}

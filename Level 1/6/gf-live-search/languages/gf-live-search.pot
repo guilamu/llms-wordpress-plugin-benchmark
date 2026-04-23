@@ -1,0 +1,32 @@
+# GF Live Search
+# Copyright (C) 2026 Developer
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: GF Live Search 1.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com\n"
+"POT-Creation-Date: 2026-04-23\n"
+"PO-Revision-Date: 2026-04-23\n"
+"Last-Translator: Developer\n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: gf-live-search.php
+msgid "Rechercher un formulaire…"
+msgstr ""
+
+#: gf-live-search.php
+msgid "Permission refusée."
+msgstr ""
+
+#: gf-live-search.php
+msgid "Aucun formulaire trouvé."
+msgstr ""
+
+#: gf-live-search.php
+msgid "Active"
+msgstr ""
