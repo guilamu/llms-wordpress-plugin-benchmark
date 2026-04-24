@@ -152,7 +152,7 @@ Despite failing the native UI integration like the others, **Claude 4.7 Opus** (
 
 ### Price vs. Performance Observation: GLM 5.1 / Deepseek V4 pro
 
-While Claude 4.7 Opus achieved the highest score, **GLM 5.1** secured a notable 2nd place (61/100) and **Deepseek V4 pro** 3rd place (60/100). When comparing the OpenRouter pricing for these top-performing models, GLM 5.1 & **Deepseek V4 pro**  offers a highly competitive price-to-performance ratio.
+While Claude 4.7 Opus achieved the highest score, **GLM 5.1** secured a notable 2nd place (61/100) and **Deepseek V4 pro** 3rd place (60/100). When comparing the OpenRouter pricing for these top-performing models, GLM 5.1 & Deepseek V4 pro  offer a highly competitive price-to-performance ratio.
 
 Delivering solid architecture (Singleton pattern, clean i18n, structured PHP) at this price point makes GLM 5.1 a very cost-effective alternative for daily automated coding tasks.
 
