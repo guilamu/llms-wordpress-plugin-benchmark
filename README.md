@@ -1,6 +1,32 @@
+# 🏆 Wordpress/Gravity Forms LLM Coding Leaderboard (2026-04-25 21:50)
+
+| Rank | Model | Score / 100 | Price Input ($/1M) | Price Output ($/1M) | Max Context | Price/Perf (Pts/$) |
+| :---: | :--- | :---: | :---: | :---: | :---: | :---: |
+| 🥇 | **claude 4.7 Opus plan** | **68** | $5.00 | $25.00 | 1M | 4.5 |
+| 🥈 | **glm 5.1** | **61** | $1.05 | $3.50 | 202K | 26.8 |
+| 🥉 | **deepseek v4 pro plan** | **60** | $1.74 | $3.48 | 1M | 23.0 |
+| 4 | claude 4.6 Opus plan | 59 | $5.00 | $25.00 | 1M | 3.9 |
+| 5 | mimo v2.5 pro | 58 | $1.00 | $3.00 | 1M | 29.0 |
+| 6 | deepseek v4 flash | 55 | $0.14 | $0.28 | 1M | 261.9 |
+| 6 | qwen 3.6+ | 55 | $0.33 | $1.95 | 1M | 48.4 |
+| 6 | sonnet 4.6 | 55 | $3.00 | $15.00 | 1M | 6.1 |
+| 9 | gemini 3.1 pro | 53 | $2.00 | $12.00 | 1M | 7.6 |
+| 10 | gpt 5.5 pro xhigh | 50 | $30.00 | $180.00 | 1.05M | 0.5 |
+| 11 | gpt 5.4 xhigh | 49 | $8.00 | $15.00 | 272K | 4.3 |
+| 11 | kimi K2.6 | 49 | $0.74 | $4.65 | 256K | 18.2 |
+| 13 | gemini 3 flash | 47 | $0.50 | $3.00 | 1M | 26.9 |
+| 14 | claude 4.7 Opus fast | 46 | $5.00 | $25.00 | 1M | 3.1 |
+| 15 | minimax m2.7 | 36 | $0.30 | $1.20 | 196K | 48.0 |
+| 16 | gemma4-e4b (local rx6700 10gb) | 32 | Free | Free | N/A | ∞ |
+| 17 | gemma4-26b (local 7700x 64gb) | 18 | Free | Free | N/A | ∞ |
+
+_Note: Max possible score is 100. Evaluation is based on specific coding tasks detailed un this article. Pricing and context limits retrieved from OpenRouter API._
+
+_* Price/Perf (Pts/$) is calculated as: `Score / ((Price Input + Price Output) / 2)`_
+
 **The Context**
 
-Recently, GitHub Copilot silently dropped support for Claude Opus on Pro accounts. Since Opus was my go-to model for my specific daily workflow—developing WordPress and Gravity Forms plugins—I was left looking for a reliable replacement. I decided to run a rigorous, blind benchmark across 14 state-of-the-art and local LLMs to objectively measure which model understands WordPress development best. To ensure a perfectly fair test, I always started with a completely fresh IDE and zero context for every single generation.
+Recently, GitHub Copilot silently dropped support for Claude Opus on Pro accounts. Since Opus was my go-to model for my specific daily workflow, developing WordPress and Gravity Forms plugins, I was left looking for a reliable replacement. I decided to run a rigorous, blind benchmark across 14 state-of-the-art and local LLMs to objectively measure which model understands WordPress development best. To ensure a perfectly fair test, I always started with a completely fresh IDE and zero context for every single generation.
 
 **The Prompt (Level 1)**
 
@@ -127,32 +153,11 @@ The local inferences failed to keep up with cloud providers. Gemma4-26b underper
 
 Despite failing the native UI integration like the others, **Claude 4.7 Opus** (using a planning prompt approach) scored the highest (68/100). It wrote performant JavaScript by pre-caching DOM text in data attributes, debouncing inputs (120ms), handling diacritics properly, and utilizing modern WordPress i18n (`wp_set_script_translations`). It stands out as the most capable direct replacement for Copilot Pro Opus.
 
-### Price vs. Performance Observation: GLM 5.1
+### Price vs. Performance Observation: GLM 5.1 / Deepseek V4 pro
 
-While Claude 4.7 Opus achieved the highest score, **GLM 5.1** secured a notable 2nd place (61/100). When comparing the OpenRouter pricing for these top-performing models, GLM 5.1 offers a highly competitive price-to-performance ratio:
-
-- **GLM 5.1** (Score: 61): **$1.05** / 1M input | **$3.50** / 1M output
-- **Claude Sonnet 4.6** (Score: 55): **$3.00** / 1M input | **$15.00** / 1M output *(~3-4x more expensive)*
-- **Claude Opus 4.7** (Score: 68): **$5.00** / 1M input | **$25.00** / 1M output *(~5-7x more expensive)*
+While Claude 4.7 Opus achieved the highest score, **GLM 5.1** secured a notable 2nd place (61/100) and **Deepseek V4 pro** 3rd place (60/100). When comparing the OpenRouter pricing for these top-performing models, GLM 5.1 & Deepseek V4 pro  offer a highly competitive price-to-performance ratio.
 
 Delivering solid architecture (Singleton pattern, clean i18n, structured PHP) at this price point makes GLM 5.1 a very cost-effective alternative for daily automated coding tasks.
-
-### The Leaderboard
-
-1. **Claude 4.7 Opus plan** – 68
-2. **GLM 5.1** – 61
-3. **Claude 4.6 Opus plan** – 59
-4. **Mimo v2.5 pro** – 58
-5. **Qwen 3.6+** – 55
-5. **Sonnet 4.6** – 55
-7. **Gemini 3.1 pro** – 53
-8. **Kimi K2.6** – 49
-8. **GPT 5.4 xHigh** – 49
-10. **Gemini 3 flash** – 47
-11. **Claude 4.7 Opus fast** – 46
-12. **Minimax m2.7** – 36
-13. **Gemma4-e4b** *(Local rx6700)* – 32
-14. **Gemma4-26b** *(Local CPU)* – 18
 
 ### Conclusion
 
