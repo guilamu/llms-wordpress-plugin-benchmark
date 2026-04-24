@@ -12,3 +12,6 @@
 12.json#claude 4.6 Opus plan
 13.json#gemma4-e4b (local inference on lm studio rx6700 10gb)
 14.json#gemma4-26b (local inference on 7700x CPU 64gb ram)
+15.json#deepseek v4 flash
+16.json#deepseek v4 pro plan
+20.json#gpt 5.5 xhigh
