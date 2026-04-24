@@ -25,7 +25,7 @@ _* Price/Perf (Pts/$) is calculated as: `Score / ((Price Input + Price Output) /
 
 **The Context**
 
-Recently, GitHub Copilot silently dropped support for Claude Opus on Pro accounts. Since Opus was my go-to model for my specific daily workflow—developing WordPress and Gravity Forms plugins—I was left looking for a reliable replacement. I decided to run a rigorous, blind benchmark across 14 state-of-the-art and local LLMs to objectively measure which model understands WordPress development best. To ensure a perfectly fair test, I always started with a completely fresh IDE and zero context for every single generation.
+Recently, GitHub Copilot silently dropped support for Claude Opus on Pro accounts. Since Opus was my go-to model for my specific daily workflow, developing WordPress and Gravity Forms plugins, I was left looking for a reliable replacement. I decided to run a rigorous, blind benchmark across 14 state-of-the-art and local LLMs to objectively measure which model understands WordPress development best. To ensure a perfectly fair test, I always started with a completely fresh IDE and zero context for every single generation.
 
 **The Prompt (Level 1)**
 
