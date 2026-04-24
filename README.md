@@ -135,7 +135,7 @@ To avoid personal bias in the final scoring, I had **Gemini 3.1 Pro** act as the
 
 **1. The "Blind Spot": Re-inventing the wheel**
 
-Out of 14 models, exactly **0** successfully hooked into the native Gravity Forms search input (`#form_list_search`). Instead of analyzing the DOM and integrating with the existing UI, every single model injected a brand new, redundant `<input>` into the page (via `document.createElement`, jQuery, or PHP hooks). 
+Out of 17 models, exactly **0** successfully hooked into the native Gravity Forms search input (`#form_list_search`). Instead of analyzing the DOM and integrating with the existing UI, every single model injected a brand new, redundant `<input>` into the page (via `document.createElement`, jQuery, or PHP hooks). 
 
 **2. Complete lack of advanced UX foresight**
 
