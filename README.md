@@ -1,6 +1,6 @@
 # 🏆 Wordpress/Gravity Forms LLM Coding Leaderboard (2026-04-24 10:19)
 
-| Rank | Model | Score / 100 | Price Input ($/1M) | Price Output ($/1M) | Max Context | Price/Perf (Pts/$) |
+| Rank | Model | Score / 100 | Price Input ($/1M) | Price Output ($/1M) | Max Context | Price/Perf (Pts/$)* |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: |
 | 🥇 | **claude 4.7 Opus plan** | **68** | $5.00 | $25.00 | 1M | 4.5 |
 | 🥈 | **glm 5.1** | **61** | $1.05 | $3.50 | 202K | 26.8 |
