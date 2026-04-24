@@ -19,7 +19,7 @@
 | 15 | gemma4-e4b (local rx6700 10gb) | 32 | Free | Free | N/A |
 | 16 | gemma4-26b (local 7700x 64gb) | 18 | Free | Free | N/A |
 
-_Note: Max possible score is 100. Evaluation is based on specific coding tasks. Pricing and context limits retrieved from OpenRouter API._
+_Note: Max possible score is 100. Evaluation is based on specific coding tasks detailed un this article. Pricing and context limits retrieved from OpenRouter API._
 
 **The Context**
 
